@@ -8,10 +8,12 @@ $cd /vagrant
 
 ### Model
 
-Create
+#####(게시판 CRUD)
 
-Read
+Create : 게시판 만들기
 
-Update
+Read : 게시판 읽어오기
 
-Destroy
+Update : 게시판 수정하기
+
+Destroy : 게시판 삭제하기

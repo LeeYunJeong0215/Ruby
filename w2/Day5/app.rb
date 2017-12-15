@@ -54,10 +54,10 @@ get '/create' do
   @content_erb = params[:content]
 
   #id와 created_at은 자동 생성됨.
-  #do에 저장하자!
+  #db에 저장하자!
   #title, content는 맨 위에 DataMapper에서 설정한 내용.
   #Post라는 table(db)의 Column(열)에 해당하는 것.
-  Post.create(:title => @title_erb, :content => @content_erb)
+  @post = Post.create(:title => @title_erb, :content => @content_erb)
   #erb :create
   redirect '/' #home으로 바로 돌아가게 하는 코드
 end
@@ -90,9 +90,4 @@ get '/update/:id' do
   @post = Post.get(params[:id])
   @post.update(:title => params[:title], :content => params[:content])
   redirect '/'
-end
-
-get '/welcome/:name' do
-  @name = params[:name]
-  erb :welcome
 end

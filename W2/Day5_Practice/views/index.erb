@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Day5 연습</title>
+  </head>
+  <body>
+    <h2>게시물 만들기, 보기, 삭제하기, 수정하기</h2><br/>
+    <a href="/input">게시글 작성</a>
+    <hr/>
+
+    <% @posts.each do |p| %>
+    <p><%= p.id %></p>
+    <p><%= p.title %></p>
+    <p><%= p.content %></p>
+    <p><%= p.created_at %></p>
+    <a href="/posts/<%= p.id %>">게시글 보기</a>
+    <a href="/destroy/<%= p.id %>">삭제</a>
+    <a href="/edit/<%= p.id %>">수정</a>
+    <% end %>
+    </body>
+</html>
