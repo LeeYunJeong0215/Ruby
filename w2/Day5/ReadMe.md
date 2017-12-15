@@ -8,3 +8,10 @@ $cd /vagrant
 
 ### Model
 
+Create
+
+Read
+
+Update
+
+Destroy

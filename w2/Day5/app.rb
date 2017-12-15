@@ -37,12 +37,14 @@ get '/' do
   erb :index
 end
 
+
 #게시글을 입력할 수 있는 곳(=어제의 post와 같음.)
 get '/new' do
   erb :new
 end
 
 #게시글을 만드는 곳(do에 저장하는 곳)
+#CRUD -C(Create)
 get '/create' do
   #params[:title] params[:content]가 form에서 넘어온다
   #input/textarea에 **name**으로 설정된 것.
@@ -60,9 +62,34 @@ get '/create' do
   redirect '/' #home으로 바로 돌아가게 하는 코드
 end
 
+#variable routing : 주소를 통해 변수를 받는것.
+#CRUD - Read(읽어오기)
 get '/posts/:id' do
   @post = Post.get(params[:id])
   erb :posts
+end
+
+#해당하는 데이터 지우기
+#CRUD -D(destroy)
+get '/destroy/:id' do
+  @post = Post.get(params[:id])
+  @post.destroy
+  redirect '/'
+end
+
+#CRUD - U(update)
+#1. 사용자에게 form을 입력받는 창
+
+get '/edit/:id' do
+  @post = Post.get(params[:id])
+  erb :edit
+end
+
+#2.실제로 db에 저장
+get '/update/:id' do
+  @post = Post.get(params[:id])
+  @post.update(:title => params[:title], :content => params[:content])
+  redirect '/'
 end
 
 get '/welcome/:name' do
