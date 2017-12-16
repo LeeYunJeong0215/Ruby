@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Control page</title>
+  </head>
+  <body>
+    <h2>게시판 CRUD 연습 2번째</h2><br/>
+    <a href = "/input"> 게시물 쓰기</a><br/><br/>
+
+    <% @posts.each do |p| %>
+      <p><%= p.id %></p>
+      <p><%= p.title %></p>
+      <p><%= p.content %></p>
+      <p><%= p.created_at %></p>
+      <a href ="/posts/<%= p.id %>">게시글 보기</a>
+      <a href ="/destroy/<%= p.id %>">삭제</a>
+      <a href ="/edit/<%= p.id %>">수정</a>
+    <% end %>
+
+  </body>
+</html>

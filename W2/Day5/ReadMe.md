@@ -10,10 +10,10 @@ $cd /vagrant
 
 #####(게시판 CRUD)
 
-Create : 게시판 만들기
+Create : 게시판 만들기(**/new, /create**)
 
-Read : 게시판 읽어오기
+Read : 게시판 읽어오기(**/posts**)
 
-Update : 게시판 수정하기
+Update : 게시판 수정하기(**/edit, /update**)
 
-Destroy : 게시판 삭제하기
+Destroy : 게시판 삭제하기(**/destroy**)
