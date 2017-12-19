@@ -1,8 +1,21 @@
 <h2>Post</h2>
 <a href="/post/new">글쓰기</a></p>
 <hr/>
-<% @posts.each do |p| %>
-  <p><%= p.username %></p>
-  <p><%= p.title %></p>
-  <p><%= p.content %></p>
+<table style="width:100%">
+  <tr>
+    <th></th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+<% @posts.each do |post| %>
+<tr>
+  <td><%= post.id %></td>
+  <td><%= post.username %></td>
+  <td><%= post.title %></td>
+  <td><%= post.content %></td>
+  <td><%= post.created_at %></td>
+  <td><a href = "/post/show/<%= post.id %>">보기</a></td>
+</tr>
 <% end %>
+<hr />
+</table>

@@ -14,11 +14,18 @@ def create
   :content => params[:content])
 
   #게시판 생성방법 2
-  post = Post.new
-  post.username = params[:username]
-  post.title = params[:title]
-  post.content = params[:content]
-  post.save
+  #post = Post.new
+  #post.username = params[:username]
+  #post.title = params[:title]
+  #post.content = params[:content]
+  #post.save
+
+  redirect_to '/'
+end
+
+def show
+  #어떤 글을 보여주겠다
+  @post = Post.find(params[:id])
 end
 
 end
