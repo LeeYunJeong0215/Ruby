@@ -28,4 +28,47 @@ def show
   @post = Post.find(params[:id])
 end
 
+def destroy
+  #어떤 글을 가져온다
+  @post = Post.find(params[:id])
+  #강사님 방법
+
+  #@id = params[:id]
+  #post = Post.find(@id)
+  #post.destroy
+
+  #삭제(destroy)한다
+  Post.destroy(params[:id])
+
+  #한 줄로 줄일 수 있다
+  #Post.destroy(Post.find(params[:id]))
+
+  #'/' 루트페이지로 보낸다.
+  redirect_to '/'
+end
+
+def modify
+  @post = Post.find(params[:id])
+
+end
+
+def update
+  @post = Post.find(params[:id])
+
+  #업데이트 방법 1-1
+  @post.update(username: params[:username], title: params[:title], content: params[:content])
+  # #업데이트 방법 1-2
+  # @post.update(:username => params[:username], :title => params[:title], :content => params[:content])
+  # #방법 2
+  #
+  # @post.username = params[:username]
+  # @post.title = params[:title]
+  # @post.content = params[:content]
+  # @post.save
+
+  #문자열 안에
+  redirect_to "/post/show/#{params[:id]}"
+
+end
+
 end
