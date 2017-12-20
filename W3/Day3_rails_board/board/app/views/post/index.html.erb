@@ -1,0 +1,26 @@
+<h2>Post</h2>
+<p><a class="btn btn-primary" role="button" href="/post/new">글쓰기</a></p>
+<hr/>
+<table style="width:100%">
+  <tr>
+    <th>글번호</th>
+    <th>작성자</th>
+    <th>제목</th>
+    <th>내용</th>
+    <th>작성시간</th>
+
+  </tr>
+<% @posts.each do |post| %>
+<tr>
+  <td><%= post.id %></td>
+  <td><%= post.username %></td>
+  <td><%= post.title %></td>
+  <td><%= post.content %></td>
+  <td><%= post.created_at %></td>
+  <td><a href = "/post/show/<%= post.id %>">보기</a></td>
+  <td><a href = "/post/destroy/<%= post.id %>">삭제</a></td>
+  <td><a href = "/post/modify/<%= post.id %>">수정</a></td>
+</tr>
+<% end %>
+<hr />
+</table>

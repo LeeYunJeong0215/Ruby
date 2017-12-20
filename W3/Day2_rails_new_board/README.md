@@ -1,52 +1,9 @@
-## 동물마을의 사생활
+#### 새로운 레일즈 생성
 
-##### 1. A동물이 B동물을 죽였다.
-
-* A동물이 B동물을 정말 죽였을 경우
-
-  ex)캥거루가 사자를 죽였다.
-
-  누가? 캥거루가
-
-  언제(트릭) ? 사자가 자고 있던 시각에
-
-  어디서(트릭) ? 사자의 집에서
-
-  무엇을 ? 사자를
-
-  어떻게(트릭) ? 
-
-  1. 얼린 양고기를 이용해 급소를 강타 즉사 시켰다, 그 양고기로 스튜를 해먹었다, 또는 그 									            양고기로 파티를 했다.
-  2. 고드름의 뾰족한 끝을 이용해 급소를 찌른 후 고드름은 녹여 없앴다.
-  3. 독살?
-
-  왜(스토리)? 캥거루는 권투선수였다.  권투선수로 챔피언도 여러번 했던 캥거루와 사자는 사귀다가 사자가 캥거루를 차고 알파카와 결혼을 했다.  이 일로 상심한 캥거루는 술을 마시게 되고 결국 운동선수로서의 기량도 떨어져 강제은퇴를 하게 되고 폐인이 된다. 자기 인생이 망가진 것이 사자 탓이라고 생각한 캥거루는 사자를 죽인다.
-
-  ​
-
-* A동물이 살해를 당했는데 마치 자살한 것처럼 꾸민 경우
-
-  ex)악어가 살해를 당했는데 자살한 것처럼 꾸몄다.
-
-
-
-##### 2.자살을 했으나 살해당한 것처럼 위장했다
-
-
-
-
-
-
-
-
-
-
-
-#### 추리소설의 경우 기발한 트릭으로 범인을 찾는데 집중 시키는 경우가 있고,
-
-####아니면 피해자가 어떤 삶을 살았는지에 집중하여 이야기를 풀어나가는 경우가 있음.
-
-
+```console
+$ rails new 영어프로젝트명
+$ rails generate controller 컨트롤러명
+```
 
 #### 레일즈에서 controller 지우기
 
@@ -54,24 +11,38 @@
 $ rails d controller controller명
 ```
 
-
-
 #### 레일즈에서 db생성 하기
 
-1. post라는 모델을 만들었다(모델을 만들었다고 실제 db가 생기는게 아님): $ rails g model post
+```console
+1. post라는 모델을 만들었다(모델을 만들었다고 실제 db가 생기는게 아님):
+$ rails g model post
+
 2. migrate내에서 테이블 생성 후(atom에서 작업)
-3. 실제로 db 생성 : $ rake db:migrate
-4. db 지우기 : $rake db:drop
+
+3. 실제로 db 생성 
+$ rake db:migrate
+
+4. ***db 지우기*** 
+$ rake db:drop
+
+```
 
 #### 레일즈에서 gem 파일 설치하기
 
+```console
 1. Gemfile에 gem install 명령어 입력(atom에서)
-
-2. ```console
+ group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+  ***gem 'rails_db'*** -> 이걸 추가
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+2. 파일 설치 명령어
    $ bundle install
-   ```
+```
 
-   ​
+게시판 예쁘게 꾸미기 : https://getbootstrap.com/
 
 
 

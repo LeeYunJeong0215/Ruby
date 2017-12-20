@@ -1,0 +1,28 @@
+<h2> 멀티캠퍼스 20층 식당 이용후기</h2>
+<a href="/ask/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">글 쓰기</a>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">글번호</th>
+      <th scope="col">작성자</th>
+      <th scope="col">제목</th>
+      <th scope="col">내용</th>
+      <th scope="col">작성일자</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <% @asks.each do |ask| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= ask.id %></th>
+      <td><%= ask.username %></td>
+      <td><%= ask.title %></td>
+      <td><%= ask.content %></td>
+      <td><%= ask.created_at %></td>
+      <td><a href="/ask/create">보기</td>
+      <td><a href="/ask/destroy/<%= ask.id %>">삭제</td>
+      <td><a href="/ask/edit/<%= ask.id %>">수정</td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

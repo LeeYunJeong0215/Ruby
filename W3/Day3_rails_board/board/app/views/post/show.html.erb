@@ -1,0 +1,17 @@
+<%= @post.id %>
+<%= @post.username %>
+<%= @post.title %>
+<%= @post.content %>
+<%= @post.created_at %>
+
+<h4> 댓글 입력</h4>
+  <form action ="/post/add_comment">
+    <input type ="text" name="content" placeholder="re: input" />
+    <input type ="hidden" name="id" value="<%= @post.id %>">
+    <input type ="submit" />
+  </form>
+
+  <hr/>
+  <% @post.comments.reverse.each_with_index.each do |comment, i| %>
+    <%= @post.comments.length - i %>번째 댓글 <p><%= comment.content %> </p>
+  <% end %>
